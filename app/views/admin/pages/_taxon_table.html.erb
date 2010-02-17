@@ -7,8 +7,7 @@
   	</tr>
   </thead>
   <tbody>
-    <% debugger %>
-    <% taxons.each do |taxon| %>
+    <% @page.taxons.each do |taxon| %>
       <tr id="<%= dom_id(taxon, :sel)%>">
         <td><%= taxon.name %></td>
         <td><%= taxon_path taxon %></td>
