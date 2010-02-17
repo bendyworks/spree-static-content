@@ -33,7 +33,7 @@
     <td><%= f.text_field :title, {"style" => "width:500px"} %></td>
   </tr>
   <tr>
-    <td valign="top"><%=t("ext_static_content_slug")%>:</td>
+    <td valign="top"><%= f.label :slug, t("ext_static_content_slug")%>:</td>
     <td><%= f.text_field :slug, {"style" => "width:500px"} %></td>
   </tr>
   <tr>
