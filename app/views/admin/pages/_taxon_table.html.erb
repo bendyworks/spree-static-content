@@ -7,7 +7,7 @@
   	</tr>
   </thead>
   <tbody>
-    <% taxons.each do |taxon| %>
+    <% @page.taxons.each do |taxon| %>
       <tr id="<%= dom_id(taxon, :sel)%>">
         <td><%= taxon.name %></td>
         <td><%= taxon_path taxon %></td>
@@ -21,7 +21,7 @@
   	    </td>        
       </tr>
     <% end %>
-    <% if taxons.empty? %>
+    <% if @page.taxons.empty? %>
      <tr><td colspan="3"><%= t('none') %>.</td></tr>
     <% end %>
   </tbody>
