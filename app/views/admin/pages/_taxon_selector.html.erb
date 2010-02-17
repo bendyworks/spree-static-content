@@ -1,8 +1,5 @@
 <% content_for :head do %>
 
-  <%= javascript_include_tag 'jquery/jquery.js' %>
-  <%= javascript_include_tag 'wymeditor/jquery.wymeditor.js' %>
-
   <script type="text/javascript" charset="utf-8">
 
   function search_for_taxons(){
@@ -12,30 +9,32 @@
        jQuery('#search_hits').html(request);
      },
      type: 'post', 
-     url: '<%= available_admin_page_taxons_url(@page) %>'
+     url: '<%= available_admin_pages_taxons_url(@page) %>'
     });    
   }
-
-  jQuery("#searchtext").keypress(function (e) {
-    if ((e.which && e.which == 13) || (e.keyCode && e.keyCode == 13)) {
-      search_for_taxons();
-
-      return false;
-    } else {
-       return true;
-    }  
-  });
   
-  jQuery("#searchtext").delayedObserver(0.75, function(element, value) {
-    search_for_taxons();
-  })
+  jQuery(function(){
+    jQuery("#searchtext").keypress(function (e) {
+      if ((e.which && e.which == 13) || (e.keyCode && e.keyCode == 13)) {
+        search_for_taxons();
+
+        return false;
+      } else {
+         return true;
+      }  
+    });
+
+    jQuery("#searchtext").delayedObserver(0.75, function(element, value) {
+      search_for_taxons();
+    })
+  });
   </script>
 <% end %>
 
 <table class="admin-report" width="545">
   <tr>
-    <td valign="top"><%= f.label :searchtext, t('search') %>:</td>
-    <td><%= f.text_field :searchtext, {"style" => "width:500px"} %></td>
+    <td valign="top"><label><%= t('search') %>:</label></td>
+    <td><input id="searchtext"></td>
   </tr>
   <tr>
     <td><div id="search_hits"></div></td>
