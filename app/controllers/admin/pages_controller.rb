@@ -21,6 +21,6 @@ class Admin::PagesController < Admin::BaseController
   
 private
   def set_taxons
-    @taxons = @page.taxons
+    @taxons = @page ? @page.taxons : []
   end
 end
