@@ -1,6 +1,6 @@
 class Admin::PagesController < Admin::BaseController
   resource_controller
-  before_filter :set_taxons
+  before_filter :set_taxons, :except => [:index]
   
   update.response do |wants|
     wants.html { redirect_to collection_url }
