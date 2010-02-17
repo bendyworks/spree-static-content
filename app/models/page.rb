@@ -1,7 +1,7 @@
 class Page < ActiveRecord::Base
   default_scope :order => "position ASC"
   
-  has_many :taxons, :through => :pages_taxons
+  has_many :taxons, :through => :pages_taxon
 
   validates_presence_of :title
   validates_presence_of [:slug, :body], :if => :not_using_foreign_link?
