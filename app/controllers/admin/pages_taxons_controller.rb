@@ -1,5 +1,9 @@
 class Admin::PagesTaxonsController < Admin::BaseController
+  include Railslove::Plugins::FindByParam::SingletonMethods
   resource_controller
+  before_filter :load_object, :only => [:selected, :available, :remove]
+  belongs_to :page
+
   def selected
     @taxons = @page.taxons
   end
