@@ -41,5 +41,6 @@ class Admin::PagesTaxonsController < Admin::BaseController
 private
   def load_taxon
     @taxon = Taxon.find(params[:id])
+    @page = Page.find_by_param!(params[:page_id])
   end
 end
