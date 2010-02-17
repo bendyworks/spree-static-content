@@ -6,7 +6,7 @@
 
 <% form_for(:page, :url => collection_url) do |f| %>
   <%= render :partial => "form", :locals => { :f => f } %>
-  <%= render :partial => "taxon_table", :locals => {:taxons => f.taxons}%>
+  <%= render :partial => "taxon_table", :locals => {:taxons => @taxons}%>
   <%= render :partial => "taxon_selector", :locals => {:f => f} %>
   <p>
     <%= submit_tag t("create"), {"class" => "wymupdate"}%> <%= t("or") %> <%= link_to t("cancel"), admin_pages_path%>
