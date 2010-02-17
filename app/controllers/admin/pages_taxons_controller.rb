@@ -22,6 +22,7 @@ class Admin::PagesTaxonsController < Admin::BaseController
   end
 
   def remove
+    debugger
     @page.taxons.delete(@taxon)
     @page.save
     @taxons = @page.taxons

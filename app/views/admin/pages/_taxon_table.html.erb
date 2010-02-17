@@ -21,7 +21,7 @@
   	    </td>        
       </tr>
     <% end %>
-    <% if taxons.empty? %>
+    <% if @page.taxons.empty? %>
      <tr><td colspan="3"><%= t('none') %>.</td></tr>
     <% end %>
   </tbody>
