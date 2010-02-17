@@ -37,39 +37,39 @@
     <td><%= f.text_field :slug, {"style" => "width:500px"} %></td>
   </tr>
   <tr>
-    <td valign="top"><%=t("ext_static_content_body")%>:</td>
+    <td valign="top"><%= f.label :body, t("ext_static_content_body")%>:</td>
     <td><%= f.text_area :body, {"style" => "width:500px", "class"=> "wymeditor"} %> </td>
   </tr>
   <tr>
-    <td valign="top"><%=t("ext_static_content_foreign_link")%>:</td>
+    <td valign="top"><%= f.label :foreign_link, t("ext_static_content_foreign_link")%>:</td>
     <td><%= f.text_field :foreign_link, {"style" => "width:500px"} %></td>
   </tr>
   <tr>
-    <td valign="top"><%=t("ext_static_content_meta_keywords")%>:</td>
+    <td valign="top"><%= f.label :meta_keywords, t("ext_static_content_meta_keywords")%>:</td>
     <td><%= f.text_field :meta_keywords, {"style" => "width:500px"} %></td>
   </tr>
   <tr>
-    <td valign="top"><%=t("ext_static_content_meta_description")%>:</td>
+    <td valign="top"><%= f.label :meta_description, t("ext_static_content_meta_description")%>:</td>
     <td><%= f.text_field :meta_description, {"style" => "width:500px"} %></td>
   </tr>
   <tr>
-    <td valign="top"><%=t("ext_static_content_show_in_header")%>:</td>
+    <td valign="top"><%= f.label :show_in_header, t("ext_static_content_show_in_header")%>:</td>
     <td><%= f.check_box :show_in_header %></td>
   </tr>
   <tr>
-    <td valign="top"><%=t("ext_static_content_show_in_footer")%>:</td>
+    <td valign="top"><%= f.label :show_in_footer, t("ext_static_content_show_in_footer")%>:</td>
     <td><%= f.check_box :show_in_footer %></td>
   </tr>
   <tr>
-    <td valign="top"><%=t("ext_static_content_position")%>:</td>
+    <td valign="top"><%= f.label :position, t("ext_static_content_position")%>:</td>
     <td><%= f.text_field :position %></td>
   </tr>
   <tr>
-    <td valign="top"><%=t("ext_static_content_layout")%>:</td>
+    <td valign="top"><%= f.label :layout, t("ext_static_content_layout")%>:</td>
     <td><%= f.text_field :layout %></td>
   </tr>
   <tr>
-    <td valign="top"><%=t("ext_static_content_visible")%>:</td>
+    <td valign="top"><%= f.label :visible, t("ext_static_content_visible")%>:</td>
     <td><%= f.check_box :visible %></td>
   </tr>
 </table>
