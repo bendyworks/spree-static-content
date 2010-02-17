@@ -34,8 +34,8 @@
 
 <table class="admin-report" width="545">
   <tr>
-    <td valign="top"><%= f.label :searchtext, t('search') %>:</td>
-    <td><%= f.text_field :searchtext, {"style" => "width:500px"} %></td>
+    <td valign="top"><label><%= t('search') %>:</label></td>
+    <td><input id="searchtext"></td>
   </tr>
   <tr>
     <td><div id="search_hits"></div></td>
