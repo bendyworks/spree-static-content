@@ -40,7 +40,6 @@ class Admin::PagesTaxonsController < Admin::BaseController
 
 private
   def load_taxon
-    debugger
-    puts params
+    @taxon = Taxon.find(params[:id])
   end
 end
