@@ -1,6 +1,7 @@
 class Page < ActiveRecord::Base
   default_scope :order => "position ASC"
   
+  has_many :pages_taxons
   has_many :taxons, :through => :pages_taxons
 
   validates_presence_of :title
