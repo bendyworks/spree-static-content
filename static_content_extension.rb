@@ -46,6 +46,7 @@ class StaticContentExtension < Spree::Extension
     end
 
     Taxon.class_eval do
+      has_many :pages_taxons
       has_many :pages, :through => :pages_taxons
     end
     
