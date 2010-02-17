@@ -45,6 +45,10 @@ class StaticContentExtension < Spree::Extension
       alias_method_chain :title, :page_title_check
     end
 
+    Taxon.class_eval do
+      has_many :pages, :through => :pages_taxons
+    end
+    
     if not defined?(Spree::ThemeSupport)
       Admin::ConfigurationsController.class_eval do
         before_filter :add_static_pages_links, :only => :index
