@@ -1,7 +1,8 @@
 class Admin::PagesTaxonsController < Admin::BaseController
   include Railslove::Plugins::FindByParam::SingletonMethods
   resource_controller
-  before_filter :load_object, :only => [:selected, :available, :remove]
+  before_filter :load_object, :only => [:selected, :available]
+  before_filter :load_taxon, :only => [:remove]
   belongs_to :page
 
   def selected
@@ -22,7 +23,6 @@ class Admin::PagesTaxonsController < Admin::BaseController
   end
 
   def remove
-    debugger
     @page.taxons.delete(@taxon)
     @page.save
     @taxons = @page.taxons
@@ -36,5 +36,11 @@ class Admin::PagesTaxonsController < Admin::BaseController
     @page.save
     @taxons = @page.taxons
     render :layout => false
+  end
+
+private
+  def load_taxon
+    debugger
+    puts params
   end
 end
