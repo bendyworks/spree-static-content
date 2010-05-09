@@ -16,7 +16,7 @@ class Admin::PagesController < Admin::BaseController
   end
 
   create.after do
-    Rails.cache.delete('pag_not_exist/'+@page.slug)
+    Rails.cache.delete('page_not_exist/'+@page.slug)
   end
   
 private
