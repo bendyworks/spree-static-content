@@ -49,7 +49,11 @@ class StaticContentExtension < Spree::Extension
       has_many :pages_taxons
       has_many :pages, :through => :pages_taxons
     end
-    
+
+    ProductsController.class_eval do
+      before_filter :render_page_if_exists
+    end
+
     if not defined?(Spree::ThemeSupport)
       Admin::ConfigurationsController.class_eval do
         before_filter :add_static_pages_links, :only => :index
